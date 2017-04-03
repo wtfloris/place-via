@@ -23,7 +23,7 @@ function start(){
 // Haalt de opdracht op van github
 function updateGoal() {
 	console.log("Updating target area... Ceterum censeo The Void esse delendam");
-	const url = 'https://raw.githubusercontent.com/Sadye/rPlace/master/data.json' + '?no-cache=' + (new Date).getTime();
+	const url = 'https://raw.githubusercontent.com/wtfloris/place-via/master/data.json' + '?no-cache=' + (new Date).getTime();
 	//Hier komt later een functie om meerdere opdrachten te kunnen verdelen over gebruikers
 	fetch(url)
 	.then((resp) => resp.json())
@@ -34,7 +34,7 @@ function updateGoal() {
 		drawingData.colors = data.colors;
 		if (currentVersion < data.newVersion) {
 			// dit moet nog iets beter uitgewerkt worden
-			document.body.innerHTML = '<center><br><br><br><br><br><br><h1 style="font-size: 20pt;">Je script is verouderd! Download alsjeblieft de nieuwe update (v' + data.newVersion + '). <br><br><br><p style="font-size: 14pt;">Als je het script hebt geïnstalleerd via een bladwijzer hoef je alleen de pagina te herladen en de bladwijzer opnieuw te gebruiken.</p><br><br><a href=https://raw.githubusercontent.com/Sadye/rPlace/master/script.js>Script</a> | <a target="_blank" href="https://discord.gg/EU4NhBn">Discord</a> | <a target="_blank" href="https://github.com/Sadye/rPlace">Github</a></h1></center>';
+			document.body.innerHTML = '<center><br><br><br><br><br><br><h1 style="font-size: 20pt;">Je script is verouderd! Download alsjeblieft de nieuwe update (v' + data.newVersion + '). <br><br><br><p style="font-size: 14pt;">Als je het script hebt geïnstalleerd via een bladwijzer hoef je alleen de pagina te herladen en de bladwijzer opnieuw te gebruiken.</p><br><br><a href=https://raw.githubusercontent.com/wtfloris/place-via/master/script.js>Script</a> | <a target="_blank" href="https://github.com/wtfloris/place-via”>Github</a></h1></center>';
 			alert('Nieuwe update beschikbaar!');
 			return;
 		}
